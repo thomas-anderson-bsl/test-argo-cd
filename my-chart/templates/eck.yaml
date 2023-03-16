@@ -11,7 +11,7 @@ spec:
     source:
         repoURL: 'https://helm.elastic.co'
         targetRevision: 2.6.1
-        chart: elastic/eck-operator
+        chart: eck-operator
     project: default
     syncPolicy:
         automated:
