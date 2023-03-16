@@ -19,3 +19,9 @@ spec:
             selfHeal: true
         syncOptions:
         - CreateNamespace=true
+    # Was attempting to do this: https://argo-cd.readthedocs.io/en/stable/user-guide/diffing/#system-level-configuration
+    ignoreDifferences:
+    - group: admissionregistration.k8s.io/v1
+      kind: ValidatingWebhookConfiguration
+      jqPathExpressions:
+      - ".webhooks[]?.clientConfig.caBundle"
