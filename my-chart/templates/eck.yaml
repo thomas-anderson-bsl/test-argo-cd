@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+    name: eck
+    finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+    destination:
+        namespace: elastic
+        server: 'https://kubernetes.default.svc'
+    source:
+        repoURL: 'https://helm.elastic.co'
+        # targetRevision: 2.6.1
+        chart: elastic/eck-operator
+    project: default
+    syncPolicy:
+        automated:
+            prune: true
+            selfHeal: true
