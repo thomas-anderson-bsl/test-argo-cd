@@ -10,7 +10,7 @@ spec:
         server: 'https://kubernetes.default.svc'
     source:
         repoURL: 'https://helm.elastic.co'
-        # targetRevision: 2.6.1
+        targetRevision: 2.6.1
         chart: elastic/eck-operator
     project: default
     syncPolicy:
